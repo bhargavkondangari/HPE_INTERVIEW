@@ -2,8 +2,27 @@ print("hello world")
 
 print("read the log and push chnages")
 
-sum1:str =9
+#decorators
 
-for i in range(1,5):
-    sum1= sum1+i
-print(sum1)
+def fun1(fun):
+    def wrapper():
+        print("start of session")
+        fun()
+        print("end of sessions")
+
+    return wrapper
+
+
+
+@fun1
+def fun_test():
+    print("hellow world")
+
+fun_test()
+
+def fun_test2():
+    print("changing to miss world")
+
+fun_test2()
+
+print("decortor learned")
